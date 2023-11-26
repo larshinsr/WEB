@@ -1,0 +1,25 @@
+<div class="todo-container">
+    <h2>Список задач</h2>
+  
+    <!-- Форма добавления новой задачи -->
+    <div>
+      <input type="text" [(ngModel)]="newTask" placeholder="Новая задача">
+      <button (click)="addTask()">Добавить задачу</button>
+    </div>
+  
+    <ul class="todo-list">
+      <li *ngFor="let task of tasks">
+        <div *ngIf="editTaskId !== task.id">
+          {{ task.description }}
+          <button (click)="startEdit(task.id, task.description)">Редактировать</button>
+          <button (click)="deleteTask(task.id)">Удалить</button>
+        </div>
+        <div *ngIf="editTaskId === task.id">
+          <input type="text" [(ngModel)]="editTaskDesc">
+          <button (click)="saveEdit()">Сохранить</button>
+          <button (click)="cancelEdit()">Отмена</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

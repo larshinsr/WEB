@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "email": "132@123.123",
+      "password": "12312323",
+      "name": "123123"
+    },
+    {
+      "id": 2,
+      "email": "123@123.123",
+      "password": "12312323",
+      "name": "123123"
+    },
+    {
+      "email": "larshin@gmail.com",
+      "password": "09092004",
+      "id": 3
+    },
+    {
+      "email": "larsh@gmail.com",
+      "password": "09092004",
+      "name": "serg",
+      "id": 4
+    },
+    {
+      "email": "qerwer@sdfgeerfrf.xn--com-bgd",
+      "password": "12345678",
+      "name": "albert",
+      "id": 5
+    },
+    {
+      "email": "kasnve@gmail.com",
+      "password": "qrfqerferf",
+      "name": "wkefn;wrf",
+      "id": 6
+    },
+    {
+      "email": "larshinsr@gmail.com",
+      "password": "укудпукпо",
+      "name": "йдцколук",
+      "id": 7
+    }
+  ],
+  "tasks": []
+}

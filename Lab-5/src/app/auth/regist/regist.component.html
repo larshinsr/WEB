@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Регистрация</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" method="POST">
+        <div class="registration-form" [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
+            <!-- <label for="email" class="block text-sm font-medium">Email</label> -->
+            <input type="email" id="email" name="email" placeholder="Email" formControlName="email">
+            <span *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                <span *ngIf="form.get('email')?.errors?.['required']">Email не может быть пустым. </span>
+                <span *ngIf="form.get('email')?.errors?.['email']">Введите корректный email. </span>
+                <span *ngIf="form.get('email')?.errors?.['forbiddenEmail']">Этот Email уже занят. </span>
+            </span>
+        </div>
+
+        <div class="registration-form" [ngClass]="{'has-error': form.get('name')?.invalid && form.get('name')?.touched}">
+            <!-- <label for="name" class="block text-sm font-medium">Name</label> -->
+            <input type="name" id="name" name="name" placeholder="Имя" formControlName="name"
+                class="mt-1 p-2 w-full bg-gray-700 rounded-md text-white">
+            <span *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                <span *ngIf="form.get('name')?.errors?.['required']">Поле не может быть пустым.</span>
+            </span>
+        </div>
+
+        <div class="registration-form" [ngClass]="{'has-error': form.get('password')?.invalid && form.get('password')?.touched}">
+            <!-- <label for="password" class="block text-sm font-medium">Password</label> -->
+            <input type="password" id="password" name="password" placeholder="Пароль" formControlName="password">
+            <span *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+                <span *ngIf="form.get('password')?.errors?.['required']">Пароль не может быть пустым. </span>
+                <span *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+                    Пароль должен быть больше {{ form.get('password')['errors']['minlength']['requiredLength'] }}
+                    символов. Сейчас {{ form.get('password')['errors']['minlength']['actualLength'] }}.
+                </span>
+            </span>
+        </div>
+
+        <div class="mb-6">
+            <button type="submit" [disabled]="form.invalid">
+                Зарегистрироваться
+            </button>
+        </div>
+
+        <div class="text-center">
+            <p class="text-gray">Уже есть аккаунт?</p>
+            <a [routerLink]="'/login'"
+                class="linked-text">Войти</a>
+        </div>
+    </form>
+</div>
