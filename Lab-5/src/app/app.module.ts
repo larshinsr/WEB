@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { UsersService } from './shared/services/user.service';
 import { AuthService } from './shared/services/auth.service';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { ContactComponent } from './contact/contact.component';
+// import { HeaderComponent } from './todo-list/header/header.component';
 
 // import { SystemModule } from './system/system.module';
 
@@ -17,7 +19,9 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    ContactComponent,
+    
   ],
   imports: [
     BrowserModule,

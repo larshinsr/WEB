@@ -1,25 +1,40 @@
-<div class="todo-container">
-    <h2>Список задач</h2>
-  
-    <!-- Форма добавления новой задачи -->
-    <div>
-      <input type="text" [(ngModel)]="newTask" placeholder="Новая задача">
-      <button (click)="addTask()">Добавить задачу</button>
+<div class="todo-app-container">
+  <!-- Колонка добавления задачи -->
+  <div class="add-task-column">
+    <div class="input-task">
+      <button (click)="toggleAddTaskForm()" class="add-task-btn">+</button>
+      <div *ngIf="showAddTaskForm" class="add-task-form">
+        <input type="text" [(ngModel)]="newTaskDesc" placeholder="Введите задачу..." class="input-field">
+        <input type="date" [(ngModel)]="newTaskDeadline" class="input-field">
+        <button (click)="addTask()" class="add-btn">Добавить</button>
+      </div>
     </div>
-  
+  </div>
+
+  <!-- Контейнер для задач -->
+  <div class="tasks-grid-container">
     <ul class="todo-list">
-      <li *ngFor="let task of tasks">
-        <div *ngIf="editTaskId !== task.id">
-          {{ task.description }}
-          <button (click)="startEdit(task.id, task.description)">Редактировать</button>
-          <button (click)="deleteTask(task.id)">Удалить</button>
+      <li *ngFor="let task of sortedTasks" class="task-item">
+        <div *ngIf="editTaskId!==task.id" class="task-content">
+          <span [class.completed]="task.completed" [class.near-deadline]="isNearDeadline(task.deadline)"
+            class="task-description">
+            {{ task.description }}
+          </span>
+          <span class="deadline">Дедлайн: {{ task.deadline | date:'longDate' }}</span>
         </div>
-        <div *ngIf="editTaskId === task.id">
-          <input type="text" [(ngModel)]="editTaskDesc">
-          <button (click)="saveEdit()">Сохранить</button>
-          <button (click)="cancelEdit()">Отмена</button>
+
+        <div class="task-actions">
+          <button (click)="toggleTaskCompletion(task)"
+            [ngClass]="{'check-btn': !task.completed, 'uncheck-btn': task.completed}">✓</button>
+          <button (click)="startEdit(task)" class="edit-btn">Изменить</button>
+          <button (click)="deleteTask(task.id)" class="delete-btn">Удалить</button>
+        </div>
+        <div *ngIf="editTaskId === task.id" class="edit-task-form">
+          <input type="text" [(ngModel)]="editTaskDesc" placeholder="Редактировать задачу..." class="input-field">
+          <button (click)="saveEdit()" class="save-btn">Сохранить</button>
+          <button (click)="cancelEdit()" class="cancel-btn">Отменить</button>
         </div>
       </li>
     </ul>
   </div>
-  
+</div>

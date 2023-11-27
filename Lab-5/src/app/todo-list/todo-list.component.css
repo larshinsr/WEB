@@ -1,64 +1,114 @@
-.todo-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
+.todo-app-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.add-task-column {
+  flex-basis: 300px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.input-task,
+.add-task-form {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  color:#6c757d;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #3bb177;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #3bb177;;
+}
+
+.tasks-grid-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.todo-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.task-content {
+  margin-bottom: 10px;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.check-btn,
+.uncheck-btn,
+.edit-btn,
+.delete-btn {
+  margin-left: 10px;
   
-  .todo-container h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .todo-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  .todo-list li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .todo-list li button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .todo-list li button:hover {
-    background-color: #0056b3;
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+}
+.task-description{
+  color: #3bb177;
+}
+/* Стили для кнопок изменены для отражения состояния выполнения */
+.check-btn {
+  background-color: #3bb177;
+}
+
+.uncheck-btn {
+  background-color: #6c757d;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+.save-btn{
+  background-color: #3bb177;
+  margin-left: 5px;
+}.cancel-btn{
+  background-color: #dc3545;
+  margin-left: 5px;
+}
+/* Стили для ближайшего дедлайна и выполненных задач */
+.near-deadline {
+  color: red;
+  font-weight: bold;
+}
+.deadline{
+  color: #6c757d;
+}
+.completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}

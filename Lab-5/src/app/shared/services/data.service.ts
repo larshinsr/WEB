@@ -20,7 +20,7 @@ export class DataService {
     return this.http.post(`${this.apiUrl}/tasks`, task);
   }
   
-  deleteTask(taskId: number): Observable<any> {
+  deleteTask(taskId: number|null|undefined): Observable<any> {
     return this.http.delete(`${this.apiUrl}/tasks/${taskId}`);
   }
   
