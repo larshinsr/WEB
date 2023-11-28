@@ -32,7 +32,8 @@
     {
       "email": "larshin@gmail.com",
       "password": "09092004",
-      "id": 3
+      "id": 3,
+      "name":"ekv;erv"
     },
     {
       "email": "larsh@gmail.com",
@@ -61,17 +62,31 @@
   ],
   "tasks": [
     {
-      "id": 6,
-      "description": "nmv,hjvjhvjh",
+      "id": 1,
+      "description": "фв тжолваи жоу wetkn;2ot4n24tb;45g",
+      "userEmail": "larshin@gmail.com",
+      "deadline": "2023-12-09T00:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "description": "eqrkbn;qtjkbn;k4g",
+      "userEmail": "larshin@gmail.com",
+      "deadline": "2023-12-01T00:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "description": "klnerbk;jvwt;kg",
       "userEmail": "larshin@gmail.com",
       "deadline": "2023-12-03T00:00:00.000Z",
       "completed": false
     },
     {
-      "id": 7,
-      "description": "swdververv",
+      "id": 4,
+      "description": "kshjbwrhtb;wrht;b;rtiobhirithbiorthborithbihrtiobhriotbhrbhoirthbortibrt",
       "userEmail": "larshin@gmail.com",
-      "deadline": "2023-12-02T00:00:00.000Z",
+      "deadline": "2023-12-09T00:00:00.000Z",
       "completed": false
     }
   ]

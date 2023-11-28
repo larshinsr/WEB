@@ -14,6 +14,9 @@ export class DataService {
     // Предполагается, что ваши задачи имеют поле email для связи с пользователем
     return this.http.get<any[]>(`${this.apiUrl}/tasks?userEmail=${email}`);
   }
+  getUserName(email:string):Observable<any>{
+    return this.http.get<any[]>(`${this.apiUrl}/users?name=${email}`)
+  }
 
   // Другие методы для работы с задачами...
   addTask(task: any): Observable<any> {

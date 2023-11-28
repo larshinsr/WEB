@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from '../shared/services/data.service';
-import { User } from '../shared/models/user.module';
-import { Task } from '../shared/models/task.model';
+import { DataService } from 'src/app/shared/services/data.service';
+import { User } from 'src/app/shared/models/user.module';
+import { Task } from 'src/app/shared/models/task.model';
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class MainPageComponent implements OnInit {
   tasks: Task[] = [];
   currentUser: User | null = null;
   editTaskId: number | null| undefined = null; // ID задачи для редактирования
@@ -15,11 +15,13 @@ export class TodoListComponent implements OnInit {
   newTaskDeadline: string = ''; // Для дедлайна новой задачи
   editTaskDesc: string = ''; // Для редактирования описания задачи
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, ) {}
 
   ngOnInit(): void {
     this.loadCurrentUser();
     this.loadUserTasksByEmail();
+    if (this.currentUser) {
+      console.log(this.dataService.getUserName(this.currentUser.email))}
   }
 
   loadCurrentUser(): void {

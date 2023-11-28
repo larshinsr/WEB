@@ -3,12 +3,13 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthComponent } from "./auth.component";
 import { LoginComponent } from "./login/login.component";
 import { RegistrerComponent } from "./regist/regist.component";
-import { TodoListComponent } from "../todo-list/todo-list.component";
+// import { TodoListComponent } from "../../../../Lab5/todo-list/todo-list.component";
+import { MainPageComponent } from "../system/main-page/main-page.component";
 const routes: Routes = [
     {path: '', component: AuthComponent, children: [
         {path: 'login', component: LoginComponent },
-        {path: 'regist', component: RegistrerComponent},
-        { path: 'todo-list', component: TodoListComponent },
+        {path: 'regist', component: RegistrerComponent}
+        // { path: 'main-page', component: MainPageComponent},
     ]}
 ]
 

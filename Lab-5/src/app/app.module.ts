@@ -9,8 +9,13 @@ import {AppComponent} from "./app.component";
 import { AppRoutingModule } from './app-routing.module';
 import { UsersService } from './shared/services/user.service';
 import { AuthService } from './shared/services/auth.service';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { ContactComponent } from './contact/contact.component';
+// import { TodoListComponent } from '../../../Lab5/todo-list/todo-list.component';
+
+import { SharedModule } from './shared/shared.module';
+import { SystemComponent } from './system/system.component';
+import { UserProfileComponent } from './system/user-profile/user-profile.component';
+// import { SystemComponent } from './system/system.component';
+// import { HeaderComponent } from './todo-list/header/header.component';
 // import { HeaderComponent } from './todo-list/header/header.component';
 
 // import { SystemModule } from './system/system.module';
@@ -18,11 +23,12 @@ import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
+    
     AppComponent,
-    TodoListComponent,
-    ContactComponent,
+    SystemComponent,
     
   ],
+
   imports: [
     BrowserModule,
     AuthModule,
@@ -30,7 +36,8 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SharedModule
     // SystemModule
   ],
   providers: [UsersService, AuthService],
