@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 export class DataService {
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getUserTasksByEmail(email: string): Observable<any[]> {
     // Предполагается, что ваши задачи имеют поле email для связи с пользователем
     return this.http.get<any[]>(`${this.apiUrl}/tasks?userEmail=${email}`);
   }
-  getUserName(email:string):Observable<any>{
+  getUserName(email: string): Observable<any> {
     return this.http.get<any[]>(`${this.apiUrl}/users?name=${email}`)
   }
 
@@ -22,12 +22,16 @@ export class DataService {
   addTask(task: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/tasks`, task);
   }
-  
-  deleteTask(taskId: number|null|undefined): Observable<any> {
+
+  deleteTask(taskId: number | null | undefined): Observable<any> {
     return this.http.delete(`${this.apiUrl}/tasks/${taskId}`);
   }
-  
+
   updateTask(task: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/tasks/${task.id}`, task);
+  }
+  updateUserName(user: any): Observable<any> {
+
+    return this.http.put(`${this.apiUrl}/users/${user.id}`, user);
   }
 }

@@ -1,0 +1,53 @@
+/* Стили для .user-profile-container */
+.user-profile-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Стили для заголовка */
+.user-profile-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #3bb177;
+}
+
+/* Стили для параграфов в профиле пользователя */
+.user-profile-container p {
+  margin-bottom: 10px;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+/* Стили для имени и email */
+.user-profile-container p strong {
+  color: #3bb177;
+  font-weight: bold;
+}
+
+/* Оформление контейнера пользователя */
+.user-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.edit-btn{
+  background-color: #3bb177;
+}
+.save-btn{
+  background-color: #3bb177;
+  margin-left: 10px;
+}
+.cancel-btn{
+  background-color: #dc3545;
+  margin-left: 5px;
+}
+.input-field{
+  color: #6c757d;
+}

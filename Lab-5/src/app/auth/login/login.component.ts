@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
           if (user.password === formData.password) {
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
-            this.router.navigate(['./todo-list'])
+            this.router.navigate(['system/main-page'])
           } else {
             this.showMessage({
               text: 'Пароль не верный',

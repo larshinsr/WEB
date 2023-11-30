@@ -18,14 +18,14 @@ import { UserProfileComponent } from './system/user-profile/user-profile.compone
 // import { HeaderComponent } from './todo-list/header/header.component';
 // import { HeaderComponent } from './todo-list/header/header.component';
 
-// import { SystemModule } from './system/system.module';
+import { SystemModule } from './system/system.module';
 
 
 @NgModule({
   declarations: [
     
     AppComponent,
-    SystemComponent,
+    SystemComponent
     
   ],
 
@@ -37,8 +37,8 @@ import { UserProfileComponent } from './system/user-profile/user-profile.compone
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
-    // SystemModule
+    SharedModule,
+    SystemModule
   ],
   providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
